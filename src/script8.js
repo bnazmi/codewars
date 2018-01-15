@@ -99,4 +99,14 @@ function squareDigits(num){
     }
     return parseInt(seqNum);
   }
-  squareDigits(232);
+
+/**
+ * Remove String Spaces
+
+Simple, remove the spaces from the string, then return the resultant string.
+
+ */
+
+function noSpace(x){
+    return x.replace(/\s/g,'')
+  }
