@@ -32,3 +32,26 @@ var max = function(list){
 }
 max([4,6,2,1,9,63,-134,566]);
 min([-52, 56, 30, 29, -54, 0, -110]);
+
+/**
+ * A Needle in the Haystack
+ Can you find the needle in the haystack?
+
+Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+After your function finds the needle it should return a message (as a string) that says:
+
+"found the needle at position " plus the index it found the needle
+
+So
+ */
+
+function findNeedle(haystack) {
+    if(haystack.indexOf('needle') === -1){
+        return 'can not found the needle at haystack';        
+    }else {
+        return 'found the needle at position '+haystack.indexOf('needle');
+        
+    }
+  }
+
