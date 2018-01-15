@@ -79,3 +79,24 @@ var summation = function (num) {
     }
     return sum;
   }
+
+/**
+ * Square Every Digit
+ * 
+ *  Welcome. In this kata, you are asked to square every digit of a number.
+
+    For example, if we run 9119 through the function, 811181 will come out.
+
+    Note: The function accepts an integer and returns an integer
+ */
+
+
+function squareDigits(num){
+    var numToString = num.toString();
+    var seqNum=Math.pow(numToString[0],2);
+    for(var i =1;i < numToString.length;i++){
+        seqNum=  seqNum +''+ Math.pow(numToString[i],2) ;
+    }
+    return parseInt(seqNum);
+  }
+  squareDigits(232);
