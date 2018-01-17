@@ -104,9 +104,45 @@ function squareDigits(num){
  * Remove String Spaces
 
 Simple, remove the spaces from the string, then return the resultant string.
-
+noSpace('8aaaaa dddd r     ');
  */
 
 function noSpace(x){
     return x.replace(/\s/g,'')
+  }
+
+/**
+ * Array Deep Count
+
+ Array.prototype.length will give you the number of top-level elements in an array.
+
+Your task is to create a function deepCount that returns the number of ALL elements within an array,
+ including any within inner-level arrays.
+
+For example:
+
+deepCount([1, 2, 3]);  
+//>>>>> 3
+deepCount(["x", "y", ["z"]]);  
+//>>>>> 4
+deepCount([1, 2, [3, 4, [5]]]);  
+//>>>>> 7
+The input will always be an array.
+// Solution
+  1-GET lenth of top level array
+  2-Check if any element isArray 
+  3-If true we will call function again
+  4-sumation evry array element length  
+ */
+// []
+// [1,2]
+// [1,[2,[3,2]]]
+function deepCount(a){
+    var numofAllElment=a.length;
+    for(var i = 0; i < numofAllElment; i++){
+        if(Array.isArray(a[i])) {
+            numofAllElment += deepCount(a[i]);
+          } 
+    }
+    return numofAllElment;
   }
