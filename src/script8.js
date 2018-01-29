@@ -190,3 +190,32 @@ var findMissing = function (list) {
     return missingElement ;
     
   }
+
+/**
+ * Sum of Digits / Digital Root
+In this kata, you must create a digital root function.
+
+A digital root is the recursive sum of all the digits in a number. Given n, take the sum of the digits of n. If that value has two digits, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.
+
+Here's how it works (Ruby example given):
+
+digital_root(16)
+=> 1 + 6
+=> 7
+
+7777 =>21=>3
+ */
+function digital_root(n) {
+   if(n < 10 ){
+    return n;
+       
+   }else {
+       var numberToString=n.toString();
+       var sum=0;
+       for(var i=0 ;i< numberToString.length ;i++){
+            sum += parseInt(numberToString[i]);
+       }
+      return digital_root(sum);       
+   }
+   
+  }
