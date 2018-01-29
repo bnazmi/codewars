@@ -293,3 +293,37 @@ var n = function(digit) {
   function minus(r) { return function(l) { return l - r; }; }
   function times(r) { return function(l) { return l * r; }; }
   function dividedBy(r) { return function(l) { return l / r; }; }
+
+
+  /**
+   * RGB To Hex Conversion
+    The rgb() method is incomplete. Complete the method so that passing in RGB decimal 
+    values will result in a hexadecimal representation being returned. 
+    The valid decimal values for RGB are 0 - 255. Any (r,g,b) argument values that 
+    fall out of that range should be rounded to the closest valid value.
+
+The following are examples of expected output values:
+
+rgb(255, 255, 255) // returns FFFFFF
+rgb(255, 255, 300) // returns FFFFFF
+rgb(0,0,0) // returns 000000
+rgb(148, 0, 211) // returns 9400D3
+
+   */
+  function rgb(r, g, b){ 
+    // complete this function 
+    var hexaColor = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']; 
+    function checkColor(color){
+        if(color < 0){
+            return 0;
+        }else if(color >255){
+            return 255;
+        }else {
+            return color;
+        }
+    }
+    function convColor(color){
+        return hexaColor[(checkColor(color)-(checkColor(color)%16))/16]+""+hexaColor[checkColor(color)%16];
+    }
+    return convColor(r)+""+convColor(g)+""+convColor(b);
+  }
