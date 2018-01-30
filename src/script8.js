@@ -327,3 +327,34 @@ rgb(148, 0, 211) // returns 9400D3
     }
     return convColor(r)+""+convColor(g)+""+convColor(b);
   }
+
+  /**
+   * Replace With Alphabet Position
+Welcome.
+
+In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+If anything in the text isn't a letter, ignore it and don't return it.
+
+a being 1, b being 2, etc.
+
+As an example:
+
+alphabet_position("The sunset sets at twelve o' clock.")
+Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" as a string.
+A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z
+   */
+
+  function alphabetPosition(text) {
+     var alphabetArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+     var alphabetPosition='';
+     var checkChar=0;     
+     for(var i=0;i<text.length;i++){
+         if(alphabetArray.indexOf(text[i].toLowerCase()) !==-1){
+            alphabetPosition += ( (i==text.length || checkChar === 0) ? +'':' ') + (alphabetArray.indexOf(text[i].toLowerCase())+1) ;
+            checkChar++;
+            
+        }
+     }
+     return alphabetPosition;
+  }
